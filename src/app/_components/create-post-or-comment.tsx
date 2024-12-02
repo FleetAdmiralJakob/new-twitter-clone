@@ -1,10 +1,10 @@
-import { auth } from "@clerk/nextjs";
+"use client";
+import { useAuth } from "@clerk/nextjs";
 import { cn } from "~/lib/utils";
 import { Textarea } from "~/app/_components/ui/textarea";
 import { SubmitButton } from "~/app/_components/submit-button";
-import { createPostOrComment } from "~/app/actions";
-
-// TODO: Make that this form resets after submitting.
+import { createPostOrComment, type FormState } from "~/app/actions";
+import { useFormState } from "react-dom";
 
 /**
  * Create a post or a comment.
@@ -23,20 +23,24 @@ export function CreatePostOrComment({
   comment?: { postId: string };
   className?: string;
 }) {
-  const { userId } = auth();
-  const isSignedIn = !!userId;
+  const { isSignedIn } = useAuth();
 
   const createPostOrCommentAction = createPostOrComment.bind(null, comment);
+
+  const [formState, formAction] = useFormState(createPostOrCommentAction, {
+    inputContent: "",
+  } as FormState);
 
   return (
     <form
       className={cn("flex w-8/12 flex-col gap-2 md:max-w-lg", className)}
-      action={createPostOrCommentAction}
+      action={formAction}
     >
       <Textarea
         placeholder={comment ? "Add a comment..." : "What's on your mind?"}
         name="content"
         className="resize-none"
+        defaultValue={formState ? formState.inputContent : undefined}
       />
       {!isSignedIn && (
         <p className="text-sm text-gray-500">You must be logged in to post.</p>
