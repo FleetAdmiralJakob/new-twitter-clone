@@ -30,8 +30,8 @@ importers:
         specifier: ^9.0.0
         version: 9.0.11(typescript@5.7.3)
       '@serwist/sw':
-        specifier: ^8.4.4
-        version: 8.4.4
+        specifier: ^9.0.0
+        version: 9.0.11(typescript@5.7.3)
       '@t3-oss/env-nextjs':
         specifier: ^0.12.0
         version: 0.12.0(typescript@5.7.3)(zod@3.24.2)
@@ -1074,10 +1074,6 @@ packages:
     resolution: {integrity: sha512-nkNLyLmSfiYeJGFtHDzRdLDcUabyTGvrjC2VAlduC97rLhfE1c1KUhWBwBO+ZR0TONsh9roJso2vooEZc2dWAQ==}
     deprecated: This package has been deprecated. Please use serwist instead.
 
-  '@serwist/navigation-preload@8.4.4':
-    resolution: {integrity: sha512-cMna+4avA66mHuZeVBxRYViy7/O+fR+NLSLkSl5TRdx6jdDFBnsBVj6LOWcohuGmtJ/XUV0ycpxyGSUxJCjVag==}
-    deprecated: This package has been deprecated. Please use serwist instead.
-
   '@serwist/next@8.4.4':
     resolution: {integrity: sha512-WUTMTqjGl4uEO61olHkbqTWCV8bsNSYpzHNmhWksg+RXJJKCENU3Io+UcJlPX+oBJVzlIHP0cHtPsQZx7I+2sw==}
     peerDependencies:
@@ -1096,10 +1092,6 @@ packages:
       typescript:
         optional: true
 
-  '@serwist/range-requests@8.4.4':
-    resolution: {integrity: sha512-1VVhL42XnjFJKszAhgwkCUjcK4j28eudWhfGaYey5NYBk0xNqXNGTOuPBjvr5mLMo/NkmapiwDI/htAqOuK7Wg==}
-    deprecated: This package has been deprecated. Please use serwist instead.
-
   '@serwist/routing@8.4.4':
     resolution: {integrity: sha512-TimZ54n5UpQoJMjGdLIXQ1VJlQ669yfJ8scdfZKwRjggILJ3f1rI13N8vicetwZMGqveTz2Q9sVYIXaeQuFmQg==}
     deprecated: This package has been deprecated. Please use serwist instead.
@@ -1108,9 +1100,13 @@ packages:
     resolution: {integrity: sha512-Yr/wKD16vXUqVbyfHhLM25qRWTtWgNJnY8Bot0yjCV/BvHM81cOIkG3sE76FIjcUntCvfemhaN9Zx53fbRzLPQ==}
     deprecated: This package has been deprecated. Please use serwist instead.
 
-  '@serwist/sw@8.4.4':
-    resolution: {integrity: sha512-TyFlhoJpo/S1hj7+j1iiELwoU4idKvqvITBYFzpYEUK3h/qXJ+eiNiGT1hl2R0znz8p35Hp3hxbyGYFt4BYpKw==}
-    deprecated: This package has been deprecated. Please use serwist instead.
+  '@serwist/sw@9.0.11':
+    resolution: {integrity: sha512-IviX3pemS9MR59WCdC9CeRgmlHJj0H54dc+DvtQk42oxmDSua6pzJ8WaUsSB7VoaoJZeR048wC5An4JtgggQ2g==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   '@serwist/webpack-plugin@8.4.4':
     resolution: {integrity: sha512-A4ONzZzVJNgY3vddhrV7lwRuLYHQQw/SxW8iEZ62VQR3Xvx/sdrovKBJ+cXokt7kIcNgNRtPAxAeddptoirZDw==}
@@ -4372,10 +4368,6 @@ snapshots:
       '@serwist/routing': 8.4.4
       '@serwist/strategies': 8.4.4
 
-  '@serwist/navigation-preload@8.4.4':
-    dependencies:
-      '@serwist/core': 8.4.4
-
   '@serwist/next@8.4.4(next@14.2.24(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(webpack@5.94.0(esbuild@0.19.12))':
     dependencies:
       '@serwist/build': 8.4.4
@@ -4398,10 +4390,6 @@ snapshots:
     optionalDependencies:
       typescript: 5.7.3
 
-  '@serwist/range-requests@8.4.4':
-    dependencies:
-      '@serwist/core': 8.4.4
-
   '@serwist/routing@8.4.4':
     dependencies:
       '@serwist/core': 8.4.4
@@ -4410,19 +4398,11 @@ snapshots:
     dependencies:
       '@serwist/core': 8.4.4
 
-  '@serwist/sw@8.4.4':
+  '@serwist/sw@9.0.11(typescript@5.7.3)':
     dependencies:
-      '@serwist/background-sync': 8.4.4
-      '@serwist/broadcast-update': 8.4.4
-      '@serwist/cacheable-response': 8.4.4
-      '@serwist/core': 8.4.4
-      '@serwist/expiration': 8.4.4
-      '@serwist/google-analytics': 8.4.4
-      '@serwist/navigation-preload': 8.4.4
-      '@serwist/precaching': 8.4.4
-      '@serwist/range-requests': 8.4.4
-      '@serwist/routing': 8.4.4
-      '@serwist/strategies': 8.4.4
+      serwist: 9.0.11(typescript@5.7.3)
+    optionalDependencies:
+      typescript: 5.7.3
 
   '@serwist/webpack-plugin@8.4.4(webpack@5.94.0(esbuild@0.19.12))':
     dependencies:
